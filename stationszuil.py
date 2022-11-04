@@ -23,14 +23,14 @@ def reiziger():
         naam = 'anoniem'  # Dan wordt de 'naam' anoniem
     with open('stationszuil.txt', 'a') as stationszuil:  # Open de file van de 'database'
         stationszuil.write(f'{naam}; ')
-    return
+    return bericht
 
 def datum():
     now = datetime.now()
     datum = now.strftime("%d/%m/%Y %H:%M")  # Zo voeg je de datum en tijd toe
     with open('stationszuil.txt', 'a') as stationszuil:
         stationszuil.write(f'{datum}; ')
-
+    return datum
 
 def stations():
     with open('stations.txt', 'r') as file:  # Open de file stations met alle stadnamen
@@ -44,5 +44,6 @@ def stations():
     return het_station
 
 if __name__ == '__main__':
-    station = stations()
     print(reiziger())
+    print(datum())
+    print(stations())
